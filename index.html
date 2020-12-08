@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <title>RC Car Controller</title>
+
+  	<!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+              crossorigin="anonymous">
+        
+	<!-- Bootstrap JavaScript/Jquery CDN  -->        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <section id="title">
+            <h1>AVR 433MHz RC Car Controller</h1>
+        </section>
+        <section id="middle">
+            <div class="container-fluid keyPad">
+                <div class="row">
+                    <div class="col-xl-6" >
+                        <button class="w keyBut keyHov ">w</button>
+                        <button class="a keyBut keyHov">a</button>
+                        <button class="s keyBut keyHov">s</button>
+                        <button class="d keyBut keyHov">d</button>
+                    </div>
+                    <div class="col-xl-6">
+                        <button class="rx1 keyBut2 keyHov">Receiver #1</button>
+                        <button class="rx2 keyBut2 keyHov">Receiver #2</button> 
+                    </div>                
+                </div>
+        </section>
+        <section id="results">
+            <h2> Output: </h2>
+            <div class="container-fluid">
+                <h3 class="output"> N/A </h3>
+            </div>
+        </section>        
+
+
+        <section id="bottom-container">
+            <footer>
+                <b> In Development  </b>
+            </footer>
+        </section>        
+
+        <script src="./index.js" charset="utf-8">	</script>
+    </body>
+
+</html>
