@@ -2,11 +2,22 @@
 var numUserButtons = document.querySelectorAll(".keyBut").length; 
 var numUserButtons2 = document.querySelectorAll(".keyBut2").length; 
 
+var serNum = "Receiver #1";
+var cmd = "Neutral";
+updateFunc();
+
+document.querySelector("body").addEventListener("click",updateFunc);
 for (var i = 0; i < numUserButtons; i ++){
     document.querySelectorAll(".keyBut")[i].addEventListener("click",cLick);
+    
 }
 for (var i = 0; i < numUserButtons2; i ++){
     document.querySelectorAll(".keyBut2")[i].addEventListener("click",cLick2);
+}
+
+function updateFunc(){
+console.log("Command: " + cmd + " RX: " + serNum);
+document.querySelector(".output").innerHTML = "Command: " + cmd + " RX: " + serNum;
 }
 
 function cLick(){
@@ -14,19 +25,19 @@ function cLick(){
     this.classList.add("pressed");
     switch (buttonName){
     case "w":
-        return "Forward";
+        cmd = "Forward";
         break;
     case "a":
-        return "Left";
+        cmd =  "Left";
         break;
     case "s":
-        return "Down";
+        cmd =  "Down";
         break;
     case "d":
-        return "Forward";
+        cmd = "Right";
         break;
     default:
-        return "Neutral";
+        cmd = "Neutral";
     }
 }
 
@@ -35,20 +46,17 @@ function cLick2(){
     // console.log(this.innerHTML);
     var buttonName=this.innerHTML;
     this.classList.add("pressed");
-    return buttonName;
+    switch (buttonName){
+    case "Receiver #1":
+        serNum = "Receiver #1";
+        break;
+    case "Receiver #2":
+        serNum = "Receiver #2";
+        break;
+    default:
+        serNum = "Receiver #1";
+    }
 }
-
-function stringResult(cLick,cLick2){
-    var sernum = cLick2;
-    var cmd = cLick;
-    var outString="Sync " + "Receiver #" + sernum + " Command: " + cmd;
-    document.querySelector(".output").innerHTML=outString;
-}
-
-stringResult(cLick,cLick2);
-
-
-
 
 
 
