@@ -1,0 +1,10 @@
+#+TITLE: Web UI RC Car Controller
+#+AUTHOR: Alvi Ahmed
+
+*Status:* In developement 
+*Type:* Personal  
+
+* Objective 
+
+- To create a web app / UI that can act as a controller for the user
+- Will be able to send commands to a user specified serial port
