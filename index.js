@@ -23,7 +23,7 @@ for (var i = 0; i < numUserButtons; i ++){
     
 } 
 for (var i = 0; i < numUserButtons2; i ++){
-    document.querySelectorAll(".keyBut2")[i].addEventListener("click",rxClick);
+    document.querySelectorAll(".keyBut2")[i].addEventListener("mousedown",cmdClick);
 }
 
 function updateFunc(){
@@ -52,9 +52,14 @@ function cmdKeys(buttonName){
     case "1":
         serNum = "Receiver #1";
         break;
+    case "Receiver #1":
+        serNum = "Receiver #1";
+        break;
     case "2":
-        serNum =  "Receiver #2";
-        cmdPressAnim("rx2");
+        serNum = "Receiver #2";
+        break;
+    case "Receiver #2":
+        serNum = "Receiver #2";
         break;
     default:
         cmd = "Neutral";
@@ -78,10 +83,11 @@ function cmdClick(event){
 
 function cmdPressAnim(currentkey){
     var activeKey = "hello";
-    if (currentkey == "1"){
+    console.log("Current key: " + currentkey);
+    if (currentkey == "1" || currentkey == "Receiver #1"){
         activeKey = document.querySelector(".rx1");
     }
-    else if (currentkey == "2"){
+    else if (currentkey == "2" || currentkey == "Receiver #2"){
         activeKey = document.querySelector(".rx2");
     }
     else{
@@ -91,22 +97,7 @@ function cmdPressAnim(currentkey){
     setTimeout(function (){activeKey.classList.remove("pressed");},100);
 }
 
-function rxClick(){
-    // alert("I got clicked");
-    // console.log(this.innerHTML);
-    var buttonName=this.innerHTML;
-    this.classList.add("pressed");
-    switch (buttonName){
-    case "Receiver #1":
-        serNum = "Receiver #1";
-        break;
-    case "Receiver #2":
-        serNum = "Receiver #2";
-        break;
-    default:
-        serNum = "Receiver #1";
-    }
-}
+
 
 
 
